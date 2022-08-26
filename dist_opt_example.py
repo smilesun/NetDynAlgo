@@ -29,5 +29,7 @@ step = 0.001
 iters = 10000
 
 for i in range(iters):
+    # Note that each component of $x$ is being updated in distributed way
+    # they are written together due to we assume synchronized update
     x = W @ x - step*l1gradvec(x, vec_a)  # @ means matrix multiplication
     print("parameter at each node: (consensus)", x)
