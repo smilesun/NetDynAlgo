@@ -11,7 +11,7 @@ We use @ to denote matrix multiplication in this code
 import numpy as np
 
 
-def stubborn_extremists(t,x,L,n):
+def stubborn_extremists(t,x,L,num_agents):
     """
     Description:
     Implements dynamics of the model with stubborn extremists
@@ -23,7 +23,7 @@ def stubborn_extremists(t,x,L,n):
     Return:
     x_dot
     """
-    x_dot = -(np.eye(n) - np.diag(np.square(x))) @ L @ x
+    x_dot = -(np.eye(num_agents) - np.diag(np.square(x))) @ L @ x
     return x_dot
 
 def stubborn_positives(t,x,L,n):
