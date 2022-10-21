@@ -23,7 +23,7 @@ def stubborn_extremists(t,x,L,num_agents):
     Return:
     x_dot
     """
-    x_dot = -(np.eye(num_agents) - np.diag(np.square(x))) @ L @ x
+    x_dot = -(np.eye(num_agents) - np.diag(np.transpose(np.square(x))[0])) @ L @ x
     return x_dot
 
 def stubborn_positives(t,x,L,n):
@@ -38,7 +38,7 @@ def stubborn_positives(t,x,L,n):
     Return:
     x_dot
     """
-    x_dot = -0.5*(np.eye(n) - np.diag(x)) @ L @ x
+    x_dot = -0.5*(np.eye(n) - np.diag(np.transpose(x)[0])) @ L @ x
     return x_dot
 
 def stubborn_neutrals(t,x,L,n):
@@ -53,5 +53,5 @@ def stubborn_neutrals(t,x,L,n):
     Return:
     x_dot
     """
-    x_dot = -np.diag(np.squares(x)) @ L @ x
+    x_dot = -np.diag(np.transpose(np.square(x))[0]) @ L @ x
     return x_dot

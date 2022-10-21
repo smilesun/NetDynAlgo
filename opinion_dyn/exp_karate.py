@@ -29,10 +29,16 @@ x0 = 2*(x0-0.5)  # convert the [0, 1] uniform distribution to [-1, 1]
 x0[0:3]= 1
 
 
-mat_traj_agents_steps = simulate(mat_laplacian, fun_ode_rhs=stubborn_extremists, row_vec_x0=x0)
+sol = simulate(mat_laplacian, fun_ode_rhs=stubborn_extremists, row_vec_x0=x0, tspan=[0,500], num_grids=5000)
 
-# TODO visualization; verification of theoretic results and finding some further interesting scenarios :)
-plt.figure()
-plt.plot(mat_traj_agents_steps.T)
-# plt.show()   this will avoid figure to be saved
-plt.savefig("fig_karate_stubborn_extremists.pdf", format='pdf')
+# Simulation
+# Solve ode with scipy.integrate.solve_ivp (https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp)
+colors = plt.cm.RdPu(np.linspace(0.3,1,n))
+plt.figure()    
+for i in range(n):
+    plt.plot(sol.t,sol.y[i],color=colors[i])
+plt.xlabel('time t')
+plt.ylabel('x')
+plt.show()
+# plt.savefig("fig_rand_stubborn_extremists.pdf", format='pdf')
+

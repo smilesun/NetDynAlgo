@@ -25,4 +25,4 @@ def simulate(mat_laplacian, fun_ode_rhs, row_vec_x0, tspan=[0, 100], num_grids=1
                                 vectorized=True,
                                 dense_output=True,
                                 t_eval=np.linspace(tspan[0],tspan[1], num_grids))
-    return sol.y  # shape: (number of agents) \times (number of time points)
+    return sol  # shape: (number of agents) \times (number of time points)
