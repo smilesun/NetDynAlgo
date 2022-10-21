@@ -24,7 +24,9 @@ mat_laplacian = calc_Laplacian(adj_matrix_karate)
 n = mat_laplacian.shape[0]
 
 x0 = np.transpose(np.random.rand(n, 1)).squeeze()    # initiale opinions  @FIXME: have a class to test different initial opinions
+x0 = 2*(x0-0.5)  # convert the [0, 1] uniform distribution to [-1, 1]
 
+x0[1:3]= 1
 
 
 mat_traj_agents_steps = simulate(mat_laplacian, fun_ode_rhs=stubborn_extremists, row_vec_x0=x0)
