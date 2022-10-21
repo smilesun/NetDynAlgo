@@ -32,4 +32,5 @@ mat_traj_agents_steps = simulate(mat_laplacian, fun_ode_rhs=stubborn_extremists,
 # TODO visualization; verification of theoretic results and finding some further interesting scenarios :)
 plt.figure()
 plt.plot(mat_traj_agents_steps.T)
-plt.show()
+# plt.show()   this will avoid figure to be saved
+plt.savefig("fig_karate_stubborn_extremists.pdf", format='pdf')

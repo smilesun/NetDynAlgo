@@ -34,4 +34,5 @@ mat_traj_random_graph = simulate(L_erdos_reny, fun_ode_rhs=stubborn_extremists, 
 # Solve ode with scipy.integrate.solve_ivp (https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp)
 plt.figure()
 plt.plot(mat_traj_random_graph.T)
-plt.show()
+#  plt.show()
+plt.savefig("fig_rand_stubborn_extremists.pdf", format='pdf')
