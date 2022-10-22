@@ -2,8 +2,8 @@
 # Project in course "Dynamics of Socila Influence Networks"
 #
 # (c)
-# Xudong Sun
 # Adrian Wiltz
+# Xudong Sun
 ########################################################
 
 import matplotlib.pyplot as plt
