@@ -33,7 +33,7 @@ x0[0:5]= 1
 # x0[3:5]=-1
 
 
-sol = simulate(mat_laplacian, fun_ode_rhs=stubborn_positives, row_vec_x0=x0, tspan=[0,1000], num_grids=5000)
+sol = simulate(mat_laplacian, fun_ode_rhs=stubborn_neutrals, row_vec_x0=x0, tspan=[0,10000], num_grids=5000)
 
 # Simulation
 # Solve ode with scipy.integrate.solve_ivp (https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp)

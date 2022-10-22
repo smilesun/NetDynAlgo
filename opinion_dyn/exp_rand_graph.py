@@ -35,7 +35,7 @@ adj_matrix_erdos_reny, G_erdos_reny, G_erdos_reny_is_strongly_connected = genera
 
 L_erdos_reny = calc_Laplacian(adj_matrix_erdos_reny)
 
-sol = simulate(L_erdos_reny, fun_ode_rhs=stubborn_positives, row_vec_x0=x0, tspan=[0,1000], num_grids=5000)
+sol = simulate(L_erdos_reny, fun_ode_rhs=stubborn_neutrals, row_vec_x0=x0, tspan=[0,10000], num_grids=5000)
 
 # Simulation
 # Solve ode with scipy.integrate.solve_ivp (https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp)
